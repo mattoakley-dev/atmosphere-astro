@@ -1,0 +1,10 @@
+---
+const { title, description } = Astro.props;
+---
+
+<div class="flex bg-gradient-to-r from-purple-500 to-blue-500 p-20 mb-4 flex justify-center items-center">
+	<div class="w-6/12">
+		<h1 class="text-white text-4xl font-bold text-center pb-4">{title}</h1>
+		{description && <p class="text-white text-center">{description}</p>}
+	</div>
+</div>

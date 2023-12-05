@@ -1,0 +1,17 @@
+---
+import ArticleMasthead from "../components/article/ArticleMasthead.astro";
+import MainLayout from "./MainLayout.astro";
+import { formatDate } from '../js/util';
+
+import '../styles/markdown.css'
+
+const { frontmatter } = Astro.props;
+const { title, description, author, date, category } = frontmatter;
+---
+
+<MainLayout title={title} description={description}>
+	<ArticleMasthead title={title} author={author} date={formatDate(date)}></ArticleMasthead>
+	<div class="container mx-auto max-w-screen-lg p-4 min-h-screen md-container">
+		<slot/>
+	</div>
+</MainLayout>
