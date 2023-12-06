@@ -1,12 +1,24 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Masthead from "../components/Masthead.astro";
+import ArticleCard from "../components/article/ArticleCard.astro";
+
+let allArticles = await Astro.glob('./articles/*.md');
+
+allArticles = allArticles.slice(0,3)
 ---
 
 <MainLayout title="Home" description="">
 	<Masthead title='Atmosphere' description='Welcome to a sample blog created using AstroJS built by Matt oakley to demonstrate the SSR and static blogging features of this rapid framework.'/>
 
 	<div class="container mx-auto max-w-screen-lg p-4 min-h-screen">
-		Home page
+		<p class="mb-10 mt-10">
+			Ipsum adipisicing exercitation dolor pariatur labore qui. Culpa cupidatat ea elit eiusmod tempor ea qui dolor Lorem laborum adipisicing. Ad ea laboris qui cupidatat deserunt culpa. Nulla ex velit adipisicing proident fugiat deserunt sunt eu adipisicing sint incididunt quis qui. Nulla fugiat labore duis ullamco reprehenderit excepteur laboris tempor ullamco aliquip laborum aliqua. Est tempor nisi magna ut elit pariatur commodo.
+		</p>
+		<p class="mb-10 mt-10">
+			Labore commodo do incididunt amet ad et exercitation magna veniam veniam aute laboris excepteur occaecat Lorem. Fugiat in magna commodo magna nulla eu. Fugiat nulla aliqua sunt duis enim irure aliquip fugiat aliqua Lorem ad tempor incididunt proident incididunt. Labore fugiat tempor esse cillum voluptate culpa anim sunt consequat. Ipsum minim nostrud laborum sit aliquip duis officia consequat est. Fugiat mollit elit nulla. Sit minim est elit labore. Sunt eu pariatur pariatur ut deserunt nulla labore in non sit tempor voluptate ex.
+		</p>
+		<h3 class="font-bold text-2xl">Feature Articles</h3>
+		{allArticles.map((article) => <ArticleCard article={article} />)}
 	</div>
 </MainLayout>

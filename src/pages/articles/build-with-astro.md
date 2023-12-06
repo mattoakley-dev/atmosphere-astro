@@ -1,12 +1,12 @@
 ---
 layout: '../../layouts/ArticleLayout.astro'
-title: Generate reports in MongoDB
-date: 2022-03-20
-author: Matthew Oakley
-description: Officia tempor voluptate enim consequat cillum aute fugiat cupidatat
+title: Build a blog with Astro
+date: 2023-12-05
+author: Matt Oakley
+description: Nisi duis ex aliqua eu officia eiusmod duis magna pariatur.
 draft: false
-premium: false
-category: Databases
+premium: true
+category: Development
 ---
 
 Nisi duis ex aliqua eu officia eiusmod duis magna pariatur. Irure laborum qui aliqua nulla esse cillum laborum aliquip nulla elit. Id id Lorem duis irure cillum culpa. Nulla sint et aliqua velit do. Nulla sit sit proident consectetur enim ullamco aliqua in reprehenderit ullamco officia.

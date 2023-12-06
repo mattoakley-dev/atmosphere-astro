@@ -6,12 +6,12 @@ import { formatDate } from '../js/util';
 import '../styles/markdown.css'
 
 const { frontmatter } = Astro.props;
-const { title, description, author, date, category } = frontmatter;
+const { title, description, author, date, category, premium } = frontmatter;
 ---
 
-<MainLayout title={title} description={description}>
-	<ArticleMasthead title={title} author={author} date={formatDate(date)}></ArticleMasthead>
+{ <MainLayout title={title} description={description}>
+	<ArticleMasthead title={title} author={author} date={formatDate(date)} premium={premium} category={category} isLink={true}></ArticleMasthead>
 	<div class="container mx-auto max-w-screen-lg p-4 min-h-screen md-container">
 		<slot/>
 	</div>
-</MainLayout>
+</MainLayout> }

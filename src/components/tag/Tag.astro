@@ -1,0 +1,5 @@
+---
+const { category, isLink, classes, link } = Astro.props;
+---
+
+{ isLink ? <span class="bg-green-700 text-white p-1 leading-10 rounded-md text-xs ml-3 mr-3">${category}</span> : <a href={link} class={"bg-green-700 text-white p-1 leading-10 rounded-md text-xs ml-3 mr-3 " + classes}>#{category}</a> }

@@ -1,6 +1,6 @@
 ---
 const { article } = Astro.props;
-const { title, description, date, author } = article.frontmatter;
+const { title, description, date, author, premium, category } = article.frontmatter;
 
 import { formatDate } from '../../js/util';
 ---
@@ -9,5 +9,7 @@ import { formatDate } from '../../js/util';
 	<h2 class="text-xl font-bold mb-2">{title}</h2>
 	<p class="text-gray-500 text-sm mb-2"><span class="font-semibold">🗓 {formatDate(date)}</span></p>
 	<p class="text-gray-500 text-sm mb-2"><span class="font-semibold">✍🏻 {author}</span></p>
+	{premium && <p class="text-gray-500 text-sm mb-2"><span class="font-semibold">⭐️ Premium Article!</span></p>}
 	<p class="text-gray-800">{description}</p>
+	<span class="bg-green-700 text-white p-1 leading-10 rounded-md text-xs">#{category}</span>
 </a>

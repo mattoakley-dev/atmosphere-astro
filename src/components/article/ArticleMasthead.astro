@@ -1,5 +1,7 @@
 ---
-const { title, author, date } = Astro.props;
+import Tag from '../../components/tag/Tag.astro';
+import { slugify } from '../../js/util';
+const { title, author, date, premium, category } = Astro.props;
 ---
 
 <div class="bg-gradient-to-r from-purple-500 to-blue-500 p-20 mb-4">
@@ -9,6 +11,8 @@ const { title, author, date } = Astro.props;
 			<div>
 				{author && <p class="text-white text-center">✍🏻 {author}</p>}
 				{date && <p class="text-white text-center">🗓 {date}</p>}
+				{premium && <p class="text-white text-center">⭐️ Premuim Article!</p>}
+				{category && <p class="text-center"><Tag category={category} link={'/category/' + slugify(category)}/></p>}
 			</div>
 		</div>
 	</div>
