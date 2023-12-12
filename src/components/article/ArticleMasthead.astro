@@ -3,16 +3,26 @@ import Tag from '../../components/tag/Tag.astro';
 import { slugify } from '../../js/util';
 const { title, author, date, premium, category } = Astro.props;
 ---
-
-<div class="bg-gradient-to-r from-purple-500 to-blue-500 p-20 mb-4">
-	<div class="flex justify-center items-center">
-		<div class="w-6/12">
-			<h1 class="text-white text-4xl font-bold text-center pb-4">{title}</h1>
+<div class="bg-gradient-to-r from-purple-500 to-blue-500 p-20 mb-0"> <!-- Removed bottom margin (mb-0) -->
+	<div class="flex justify-center items-center h-full">
+		<div class="w-full flex flex-col items-center text-center">
+			<h1 class="text-white text-4xl font-bold pb-4">{title}</h1>
 			<div>
-				{author && <p class="text-white text-center">✍🏻 {author}</p>}
-				{date && <p class="text-white text-center">🗓 {date}</p>}
-				{premium && <p class="text-white text-center">⭐️ Premuim Article!</p>}
-				{category && <p class="text-center"><Tag category={category} link={'/category/' + slugify(category)}/></p>}
+				{date && <p class="text-white">🗓 {date}</p>}
+				{premium && <p class="text-white">⭐️ Premium Article!</p>}
+				{category && <p class="text-white"><Tag category={category} link={'/category/' + slugify(category)}/></p>}
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Grey banner with user avatar on the right and increased right padding -->
+<div class="bg-gray-200">
+	<div class="flex justify-end items-center pr-10 p-4"> <!-- Increased right padding (pr-10) -->
+		<div class="flex items-center space-x-4">
+			<img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Matt Oakley" class="w-10 h-10 rounded-full">
+			<div>
+				<p class="font-semibold">Matt Oakley</p>
+				<p class="text-sm">Web Developer</p>
 			</div>
 		</div>
 	</div>
